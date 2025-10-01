@@ -1,5 +1,5 @@
 // database.module.ts
-import { Module, OnModuleDestroy, Provider } from '@nestjs/common';
+import { Global, Module, OnModuleDestroy, Provider } from '@nestjs/common';
 import { DATABASE_CONNECTION } from './database-tokens';
 import { Pool } from 'pg';
 import { TypedConfigService } from '@config';
@@ -31,6 +31,7 @@ const drizzleProvider: Provider<DrizzleDB> = {
   inject: [TypedConfigService, SchemaLoader],
 };
 
+@Global()
 @Module({
   providers: [SchemaLoader, drizzleProvider],
   exports: [DATABASE_CONNECTION],

@@ -8,12 +8,14 @@ import { LoggerMiddleware } from './middleware/logger.middleware';
 import { AppCacheModule } from './cache/cache.module';
 import { CacheService } from './cache/cache.service';
 // import { CacheInterceptor } from '@nestjs/cache-manager';
+import { QueueModule } from './queue/queue.module';
 
 @Global()
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true, load: [config] }),
     AppCacheModule,
+    QueueModule,
   ],
   exports: [TypedConfigService, LoggerService, CacheService],
   providers: [

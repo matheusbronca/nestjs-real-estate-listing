@@ -1,7 +1,7 @@
 services:
-  nestjs_starter_postgres: # Needs updating
+  nextjs_real_estate_listing_postgres: # Needs updating
     image: postgres:alpine
-    container_name: nestjs_starter_postgres # Needs updating
+    container_name: nextjs_real_estate_listing_postgres # Needs updating
     restart: always
     env_file:
       - .env
@@ -11,20 +11,20 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - nestjs_starter_postgres_data:/var/lib/postgresql/data # NOTE: Needs updating
+      - nextjs_real_estate_listing_postgres_data:/var/lib/postgresql/data
 
-  nestjs_starter_redis: #NOTE: Needs updating
+  nextjs_real_estate_listing_redis:
     image: redis:alpine
-    container_name: nestjs_starter_redis #NOTE: Needs updating
+    container_name: nextjs_real_estate_listing_redis
     ports:
       - '6379:6379'
     volumes:
-      - nestjs_starter_redis_data:/data #NOTE: Needs updating
+      - nextjs_real_estate_listing_redis_data:/data
 
 networks:
   default:
-    name: nestjs_starter #NOTE: Needs updating
+    name: nextjs_real_estate_listing
 
 volumes:
-  nestjs_starter_postgres_data: #NOTE: Needs updating
-  nestjs_starter_redis_data: #NOTE: Needs updating
+  nextjs_real_estate_listing_postgres_data:
+  nextjs_real_estate_listing_redis_data:

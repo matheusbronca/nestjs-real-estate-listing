@@ -1,7 +1,7 @@
 services:
-  nestjs_starter_test_postgres: # Needs updating
+  nestjs_real_estate_listing_test_postgres:
     image: postgres:alpine
-    container_name: nestjs_starter_test_postgres # Needs updating
+    container_name: nestjs_real_estate_listing_test_postgres
     restart: no
     env_file:
       - .env.test
@@ -11,20 +11,20 @@ services:
     ports:
       - '5444:5432'
     volumes:
-      - nestjs_starter_test_postgres_data:/var/lib/postgresql/data # Needs updating
+      - nestjs_real_estate_listing_test_postgres_data:/var/lib/postgresql/data
 
-  nestjs_starter_test_redis: # Needs updating
+  nestjs_real_estate_listing_test_redis:
     image: redis:alpine
-    container_name: nestjs_starter_test_redis # Needs updating
+    container_name: nestjs_real_estate_listing_test_redis
     ports:
       - '6380:6379'
     volumes:
-      - nestjs_starter_test_redis_data:/data # Needs updating
+      - nestjs_real_estate_listing_test_redis_data:/data
 
 networks:
   default:
-    name: nestjs_starter_test # Needs updating
+    name: nestjs_real_estate_listing_test
 
 volumes:
-  nestjs_starter_test_postgres_data: # Needs updating
-  nestjs_starter_test_redis_data: # Needs updating
+  nestjs_real_estate_listing_test_postgres_data:
+  nestjs_real_estate_listing_test_redis_data:
